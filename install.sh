@@ -120,7 +120,7 @@ setup() {
     npm --loglevel=error i --force --ignore-scripts --no-package-lock --only=prod --no-audit --no-fund ${coc_packages[@]}
     for package in "${coc_packages[@]}";do
         cd ~/.config/coc/extensions/node_modules/${package%%@*}
-        npm --loglevel=error 1 --force --ignore-scripts --only=prod --no-audit --no-fund
+        npm --loglevel=error i --force --ignore-scripts --only=prod --no-audit --no-fund
     done
 
     title "Install onehalfdark theme"
