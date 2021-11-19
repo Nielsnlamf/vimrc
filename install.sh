@@ -127,7 +127,7 @@ setup() {
     cd ~/.vim/pack/plugins/start
     git clone https://github.com/sonph/onehalf.git && cd onehalf
     mv vim  ~/.vim/pack/plugins/start/onehalfdark
-    cd .. && rm -r onehalf
+    cd .. && rm -r -f onehalf
 
     title "Done"
 }
