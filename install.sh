@@ -60,7 +60,7 @@ plugin() {
     mkdir -p ~/.vim/pack/plugins/start
     cd ~/.vim/pack/plugins/start
     if [ ! -d $(basename $1) ];then
-        git clone https://github/com/$1
+        git clone https://github.com/$1
     fi
     cd $(basename $1)
     git checkout $2
@@ -71,7 +71,7 @@ setup() {
     title "Nielsnlamf's Vim installation script"
     echo "See https://github.com/Nielsnlamf/vimrc for info and updates"
     subtitle "Check required system software"
-    for software in ${system_packages[0]};do
+    for software in ${system_packages[@]};do
         which $software
         if [ $? == 1 ];then
             echo $software should be installed on your system
