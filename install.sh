@@ -29,6 +29,9 @@ vim_plugins=(
     suan/vim-instant-markdown
     tpope/vim-fugitive
     vim-airline/vim-airline
+    airblade/vim-gitgutter
+    vim-syntastic/syntastic
+    tomtom/tcomment_vim
 )
 
 # coc plugin with extensions installed using npm into ~/.config/coc/extensions
@@ -86,6 +89,7 @@ setup() {
     cd $(dirname $(realpath $0))
     cp .eslintrc.json ~
     cp vimrc ~/.vim/vimrc
+    cp coc-settings.json ~/.vim/coc-settings.json
     if [[ $1 = 'config-only' ]];then
         title "Done"
         exit
@@ -106,7 +110,7 @@ setup() {
     title "Install/update CoC extensions"
     mkdir -p ~/.config/coc/extensions
     cd ~/.config/coc
-    echo '{"coc-eslint|global": {eslintAlwaysAllowExecution": true}}' > memos.json
+    # echo '{"coc-eslint|global": {eslintAlwaysAllowExecution": true}}' > memos.json
     cd ~/.config/coc/extensions
     # start workaround
     git clone https://github.com/fannheyward/coc-eslint
