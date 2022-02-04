@@ -9,6 +9,10 @@ hi Pmenu ctermfg=WHITE ctermbg=BLACK
 hi Normal ctermbg=NONE
 nmap gc :TComment<cr>
 
+set undofile
+set undodir=~/.vim/.vimundo/
+set hidden
+
 set noswapfile
 let g:instant_markdown_autostart=0
 let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
@@ -27,6 +31,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 
 " random shortcuts and settings
 let g:mapleader = " " 
@@ -37,6 +43,14 @@ set smartindent
 " Linting shortcuts
 nmap <leader>n <Plug>(coc-diagnostic-next)
 nmap <leader>p <Plug>(coc-diagnostic-prev) 
+" automatically format based on linter suggestions
+noremap <silent> <leader>f :call CocAction('format')<cr>
+
+tnoremap kj <C-\><C-n>
+
+" Fuzzy Finder setup
+set rtp+=~/.fzf
+nmap <C-p> :FZF 
 
 packloadall
 helptags ALL
