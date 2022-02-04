@@ -33,6 +33,7 @@ let g:mapleader = " "
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set smartindent
 " Linting shortcuts
 nmap <leader>n <Plug>(coc-diagnostic-next)
 nmap <leader>p <Plug>(coc-diagnostic-prev) 
